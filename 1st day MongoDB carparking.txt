@@ -1,0 +1,668 @@
+use mongo_basics
+switched to db mongo_basics
+db.createcollection("car_parking");
+TypeError: db.createcollection is not a function
+show dbs
+admin   40.00 KiB
+config  48.00 KiB
+local   40.00 KiB
+db.createCollection("car_parking");
+{ ok: 1 }
+1
+1
+show dbs
+admin         40.00 KiB
+config        48.00 KiB
+local         40.00 KiB
+mongo_basics   8.00 KiB
+db.car_parking.inserting(	
+  {
+customer_name : "Prakruthi",
+car_number : "KA-09 PR-0102",
+car_brand : "BREEZZA",
+})
+TypeError: db.car_parking.inserting is not a function
+db.car_parking.inserting(	
+  {
+customer_name : "Prakruthi",
+car_number : "KA-09 PR-0102",
+car_brand : "BREEZZA",
+})
+TypeError: db.car_parking.inserting is not a function
+db.car_parking.inserting(	
+  {
+customer_name : "Prakruthi",
+car_number : "KA-09 PR-0102",
+car_brand : "BREEZZA",
+incoming_time : "2025-05-05T13:09:00"
+})
+{}
+TypeError: db.car_parking.inserting is not a function
+db.car_parking.inserting(	
+  {
+customer_name : "Prakruthi",
+car_number : "KA-09 PR-0102",
+car_brand : "BREEZZA",
+incoming_time : "2025-05-05T13:09:00"
+})
+TypeError: db.car_parking.inserting is not a function
+db.car_parking.insertOne(	
+  {
+customer_name : "Prakruthi",
+car_number : "KA-09 PR-0102",
+car_brand : "BREEZZA",
+incoming_time : "2025-05-05T13:09:00"
+}
+)
+{
+  acknowledged: true,
+  insertedId: ObjectId('68186bdd694891bcf7a29e9b')
+}
+db.car_parking.findOne({customer_name : "Prakruthi" })
+{
+  _id: ObjectId('68186bdd694891bcf7a29e9b'),
+  customer_name: 'Prakruthi',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'BREEZZA',
+  incoming_time: '2025-05-05T13:09:00'
+}
+db.car_parking.find()
+{
+  _id: ObjectId('68186bdd694891bcf7a29e9b'),
+  customer_name: 'Prakruthi',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'BREEZZA',
+  incoming_time: '2025-05-05T13:09:00'
+}
+show collections
+car_parking
+use mongo_basics
+already on db mongo_basics
+db.car_parking.insertOne(	
+  {
+customer_name : "Prakruthi",
+car_number : "KA-09 PR-0102",
+car_brand : "BREEZZA",
+incoming_time : "2025-05-05T13:09:00"
+}
+)
+{
+  acknowledged: true,
+  insertedId: ObjectId('68187e6d694891bcf7a29e9c')
+}
+db.car_parking.insertMany(	
+  {
+customer_name : "Pravathi",
+car_number : "KA-09 PR-1905",
+car_brand : "AUDI",
+incoming_time : "2025-05-05T14:33:00"
+},
+  {
+	customer_name : "Rachana Suresh",
+	car_number : "KA-09 RA-1705",
+	car_brand : "Tata Curvv",
+	incoming_time : "2025-05-05T10:00:00"
+}
+)
+MongoInvalidArgumentError: Argument "docs" must be an array of documents
+db.car_parking.insertMany(	
+  [{
+customer_name : "Pravathi",
+car_number : "KA-09 PR-1905",
+car_brand : "AUDI",
+incoming_time : "2025-05-05T14:33:00"
+},
+  {
+	customer_name : "Rachana Suresh",
+	car_number : "KA-09 RA-1705",
+	car_brand : "Tata Curvv",
+	incoming_time : "2025-05-05T10:00:00"
+}]
+)
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('68187ff8694891bcf7a29e9d'),
+    '1': ObjectId('68187ff8694891bcf7a29e9e')
+  }
+}
+db.car_parking.find()
+{
+  _id: ObjectId('68186bdd694891bcf7a29e9b'),
+  customer_name: 'Prakruthi',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'BREEZZA',
+  incoming_time: '2025-05-05T13:09:00'
+}
+{
+  _id: ObjectId('68187e6d694891bcf7a29e9c'),
+  customer_name: 'Prakruthi',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'BREEZZA',
+  incoming_time: '2025-05-05T13:09:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9d'),
+  customer_name: 'Pravathi',
+  car_number: 'KA-09 PR-1905',
+  car_brand: 'AUDI',
+  incoming_time: '2025-05-05T14:33:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9e'),
+  customer_name: 'Rachana Suresh',
+  car_number: 'KA-09 RA-1705',
+  car_brand: 'Tata Curvv',
+  incoming_time: '2025-05-05T10:00:00'
+}
+db.car_parking.findOne({customer_name : "Parvathi"})
+null
+db.car_parking.findOne({ customer_name : 'Parvathi'})
+null
+db.car_parking.findOne({ customer_name : 'Pravathi'})
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9d'),
+  customer_name: 'Pravathi',
+  car_number: 'KA-09 PR-1905',
+  car_brand: 'AUDI',
+  incoming_time: '2025-05-05T14:33:00'
+}
+db.car_parking.updateOne(
+  { customer_name:"Prakruthi"},
+  { $set:{customer_name:"Prakruthi HR"}}
+
+)
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.car_parking.find()
+{
+  _id: ObjectId('68186bdd694891bcf7a29e9b'),
+  customer_name: 'Prakruthi HR',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'BREEZZA',
+  incoming_time: '2025-05-05T13:09:00'
+}
+{
+  _id: ObjectId('68187e6d694891bcf7a29e9c'),
+  customer_name: 'Prakruthi',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'BREEZZA',
+  incoming_time: '2025-05-05T13:09:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9d'),
+  customer_name: 'Pravathi',
+  car_number: 'KA-09 PR-1905',
+  car_brand: 'AUDI',
+  incoming_time: '2025-05-05T14:33:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9e'),
+  customer_name: 'Rachana Suresh',
+  car_number: 'KA-09 RA-1705',
+  car_brand: 'Tata Curvv',
+  incoming_time: '2025-05-05T10:00:00'
+}
+db.car_parking.deleteOne({customer_name:"Prakruthi"})
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+db.car_parking.find()
+{
+  _id: ObjectId('68186bdd694891bcf7a29e9b'),
+  customer_name: 'Prakruthi HR',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'BREEZZA',
+  incoming_time: '2025-05-05T13:09:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9d'),
+  customer_name: 'Pravathi',
+  car_number: 'KA-09 PR-1905',
+  car_brand: 'AUDI',
+  incoming_time: '2025-05-05T14:33:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9e'),
+  customer_name: 'Rachana Suresh',
+  car_number: 'KA-09 RA-1705',
+  car_brand: 'Tata Curvv',
+  incoming_time: '2025-05-05T10:00:00'
+}
+db.car_parking.updateOne({car_number:"KA-09 PR-1905"},
+                         {$set : {car_number:"KA-09 PR-0102"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.car_parking.find()
+{
+  _id: ObjectId('68186bdd694891bcf7a29e9b'),
+  customer_name: 'Prakruthi HR',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'BREEZZA',
+  incoming_time: '2025-05-05T13:09:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9d'),
+  customer_name: 'Pravathi',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'AUDI',
+  incoming_time: '2025-05-05T14:33:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9e'),
+  customer_name: 'Rachana Suresh',
+  car_number: 'KA-09 RA-1705',
+  car_brand: 'Tata Curvv',
+  incoming_time: '2025-05-05T10:00:00'
+}
+db.car_parking.updateOne({car_number:"KA-09 PR-1905"},
+                         {$set : {incoming_time:"2025-05-06T01:02:00"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+db.car_parking.updateOne({car_number:"KA-09 PR-0102"},
+                         {$set : {incoming_time:"2025-05-06T01:02:00"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.car_parking.find()
+{
+  _id: ObjectId('68186bdd694891bcf7a29e9b'),
+  customer_name: 'Prakruthi HR',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'BREEZZA',
+  incoming_time: '2025-05-06T01:02:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9d'),
+  customer_name: 'Pravathi',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'AUDI',
+  incoming_time: '2025-05-05T14:33:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9e'),
+  customer_name: 'Rachana Suresh',
+  car_number: 'KA-09 RA-1705',
+  car_brand: 'Tata Curvv',
+  incoming_time: '2025-05-05T10:00:00'
+}
+db.car_parking.updateMany({car_number:"KA-09 PR-0102"},
+                         {$set : {incoming_time:"2025-06-01T01:02:00"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+db.car_parking.find()
+{
+  _id: ObjectId('68186bdd694891bcf7a29e9b'),
+  customer_name: 'Prakruthi HR',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'BREEZZA',
+  incoming_time: '2025-06-01T01:02:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9d'),
+  customer_name: 'Pravathi',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'AUDI',
+  incoming_time: '2025-06-01T01:02:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9e'),
+  customer_name: 'Rachana Suresh',
+  car_number: 'KA-09 RA-1705',
+  car_brand: 'Tata Curvv',
+  incoming_time: '2025-05-05T10:00:00'
+}
+db.car_parking.insertMany(	
+  [{
+customer_name : "keerthana",
+car_number : "KA-09 PR-2000",
+car_brand : "TATA PUNCH",
+incoming_time : "2025-05-05T14:33:00",
+age : "21"
+},
+  {
+	customer_name : "kirik keerthi",
+	car_number : "KA-09 RA-2005",
+	car_brand : "TOYOTA Etios",
+	incoming_time : "2025-05-05T10:00:00",
+	age : "20"
+}]
+)
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('68188d4c694891bcf7a29e9f'),
+    '1': ObjectId('68188d4c694891bcf7a29ea0')
+  }
+}
+db.car_parking.find()
+{
+  _id: ObjectId('68186bdd694891bcf7a29e9b'),
+  customer_name: 'Prakruthi HR',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'BREEZZA',
+  incoming_time: '2025-06-01T01:02:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9d'),
+  customer_name: 'Pravathi',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'AUDI',
+  incoming_time: '2025-06-01T01:02:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9e'),
+  customer_name: 'Rachana Suresh',
+  car_number: 'KA-09 RA-1705',
+  car_brand: 'Tata Curvv',
+  incoming_time: '2025-05-05T10:00:00'
+}
+{
+  _id: ObjectId('68188d4c694891bcf7a29e9f'),
+  customer_name: 'keerthana',
+  car_number: 'KA-09 PR-2000',
+  car_brand: 'TATA PUNCH',
+  incoming_time: '2025-05-05T14:33:00',
+  age: '21'
+}
+{
+  _id: ObjectId('68188d4c694891bcf7a29ea0'),
+  customer_name: 'kirik keerthi',
+  car_number: 'KA-09 RA-2005',
+  car_brand: 'TOYOTA Etios',
+  incoming_time: '2025-05-05T10:00:00',
+  age: '20'
+}
+db.car_parking.updateOne({age:"20"},
+                         {$set : {age:"25"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+db.car_parking.find({age:{$gt: 20}})
+db.car_parking.find()
+{
+  _id: ObjectId('68186bdd694891bcf7a29e9b'),
+  customer_name: 'Prakruthi HR',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'BREEZZA',
+  incoming_time: '2025-06-01T01:02:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9d'),
+  customer_name: 'Pravathi',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'AUDI',
+  incoming_time: '2025-06-01T01:02:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9e'),
+  customer_name: 'Rachana Suresh',
+  car_number: 'KA-09 RA-1705',
+  car_brand: 'Tata Curvv',
+  incoming_time: '2025-05-05T10:00:00'
+}
+{
+  _id: ObjectId('68188d4c694891bcf7a29e9f'),
+  customer_name: 'keerthana',
+  car_number: 'KA-09 PR-2000',
+  car_brand: 'TATA PUNCH',
+  incoming_time: '2025-05-05T14:33:00',
+  age: '21'
+}
+{
+  _id: ObjectId('68188d4c694891bcf7a29ea0'),
+  customer_name: 'kirik keerthi',
+  car_number: 'KA-09 RA-2005',
+  car_brand: 'TOYOTA Etios',
+  incoming_time: '2025-05-05T10:00:00',
+  age: '25'
+}
+db.car_parking.find({ age : {$gt: 20}})
+db.car_parking.find({ age : {$gt: 20}})
+db.car_parking.find({ age : {$gt: "20"}})
+{
+  _id: ObjectId('68188d4c694891bcf7a29e9f'),
+  customer_name: 'keerthana',
+  car_number: 'KA-09 PR-2000',
+  car_brand: 'TATA PUNCH',
+  incoming_time: '2025-05-05T14:33:00',
+  age: '21'
+}
+{
+  _id: ObjectId('68188d4c694891bcf7a29ea0'),
+  customer_name: 'kirik keerthi',
+  car_number: 'KA-09 RA-2005',
+  car_brand: 'TOYOTA Etios',
+  incoming_time: '2025-05-05T10:00:00',
+  age: '25'
+}
+db.car_parking.find({ age : {$lt: "0"}})
+db.car_parking.find({ age : {$lt: "30"}})
+{
+  _id: ObjectId('68188d4c694891bcf7a29e9f'),
+  customer_name: 'keerthana',
+  car_number: 'KA-09 PR-2000',
+  car_brand: 'TATA PUNCH',
+  incoming_time: '2025-05-05T14:33:00',
+  age: '21'
+}
+{
+  _id: ObjectId('68188d4c694891bcf7a29ea0'),
+  customer_name: 'kirik keerthi',
+  car_number: 'KA-09 RA-2005',
+  car_brand: 'TOYOTA Etios',
+  incoming_time: '2025-05-05T10:00:00',
+  age: '25'
+}
+db.car_parking.find({ age : {$gt: "21"}})
+{
+  _id: ObjectId('68188d4c694891bcf7a29ea0'),
+  customer_name: 'kirik keerthi',
+  car_number: 'KA-09 RA-2005',
+  car_brand: 'TOYOTA Etios',
+  incoming_time: '2025-05-05T10:00:00',
+  age: '25'
+}
+db.car_parking.find({ age : {$gte: "21"}})
+{
+  _id: ObjectId('68188d4c694891bcf7a29e9f'),
+  customer_name: 'keerthana',
+  car_number: 'KA-09 PR-2000',
+  car_brand: 'TATA PUNCH',
+  incoming_time: '2025-05-05T14:33:00',
+  age: '21'
+}
+{
+  _id: ObjectId('68188d4c694891bcf7a29ea0'),
+  customer_name: 'kirik keerthi',
+  car_number: 'KA-09 RA-2005',
+  car_brand: 'TOYOTA Etios',
+  incoming_time: '2025-05-05T10:00:00',
+  age: '25'
+}
+db.car_parking.find({ age : {$eq: "21"}})
+{
+  _id: ObjectId('68188d4c694891bcf7a29e9f'),
+  customer_name: 'keerthana',
+  car_number: 'KA-09 PR-2000',
+  car_brand: 'TATA PUNCH',
+  incoming_time: '2025-05-05T14:33:00',
+  age: '21'
+}
+db.car_parking.find({ age : {$ne: "21"}})
+{
+  _id: ObjectId('68186bdd694891bcf7a29e9b'),
+  customer_name: 'Prakruthi HR',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'BREEZZA',
+  incoming_time: '2025-06-01T01:02:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9d'),
+  customer_name: 'Pravathi',
+  car_number: 'KA-09 PR-0102',
+  car_brand: 'AUDI',
+  incoming_time: '2025-06-01T01:02:00'
+}
+{
+  _id: ObjectId('68187ff8694891bcf7a29e9e'),
+  customer_name: 'Rachana Suresh',
+  car_number: 'KA-09 RA-1705',
+  car_brand: 'Tata Curvv',
+  incoming_time: '2025-05-05T10:00:00'
+}
+{
+  _id: ObjectId('68188d4c694891bcf7a29ea0'),
+  customer_name: 'kirik keerthi',
+  car_number: 'KA-09 RA-2005',
+  car_brand: 'TOYOTA Etios',
+  incoming_time: '2025-05-05T10:00:00',
+  age: '25'
+}
+db.car_parking.find({ age : {$lte: "21"}})
+{
+  _id: ObjectId('68188d4c694891bcf7a29e9f'),
+  customer_name: 'keerthana',
+  car_number: 'KA-09 PR-2000',
+  car_brand: 'TATA PUNCH',
+  incoming_time: '2025-05-05T14:33:00',
+  age: '21'
+}
+db.car_parking.find(
+{ $and: 
+[{age: {$gt: "20"}},
+ {age: {$lt: "30"}}
+]
+}
+)
+{
+  _id: ObjectId('68188d4c694891bcf7a29e9f'),
+  customer_name: 'keerthana',
+  car_number: 'KA-09 PR-2000',
+  car_brand: 'TATA PUNCH',
+  incoming_time: '2025-05-05T14:33:00',
+  age: '21'
+}
+{
+  _id: ObjectId('68188d4c694891bcf7a29ea0'),
+  customer_name: 'kirik keerthi',
+  car_number: 'KA-09 RA-2005',
+  car_brand: 'TOYOTA Etios',
+  incoming_time: '2025-05-05T10:00:00',
+  age: '25'
+}
+db.car_parking.find(
+{ $or: 
+[{age: {$gt: "20"}},
+ {age: {$lt: "30"}}
+]
+}
+)
+{
+  _id: ObjectId('68188d4c694891bcf7a29e9f'),
+  customer_name: 'keerthana',
+  car_number: 'KA-09 PR-2000',
+  car_brand: 'TATA PUNCH',
+  incoming_time: '2025-05-05T14:33:00',
+  age: '21'
+}
+{
+  _id: ObjectId('68188d4c694891bcf7a29ea0'),
+  customer_name: 'kirik keerthi',
+  car_number: 'KA-09 RA-2005',
+  car_brand: 'TOYOTA Etios',
+  incoming_time: '2025-05-05T10:00:00',
+  age: '25'
+}
+db.car_parking.find(
+{ $or: 
+[{age: {$gt: "20"}},
+ {age: {$lt: "25"}}
+]
+}
+)
+{
+  _id: ObjectId('68188d4c694891bcf7a29e9f'),
+  customer_name: 'keerthana',
+  car_number: 'KA-09 PR-2000',
+  car_brand: 'TATA PUNCH',
+  incoming_time: '2025-05-05T14:33:00',
+  age: '21'
+}
+{
+  _id: ObjectId('68188d4c694891bcf7a29ea0'),
+  customer_name: 'kirik keerthi',
+  car_number: 'KA-09 RA-2005',
+  car_brand: 'TOYOTA Etios',
+  incoming_time: '2025-05-05T10:00:00',
+  age: '25'
+}
+db.car_parking.find(
+{ $or: 
+[{age: {$gt: "20"}},
+ {age: {$lt: "24"}}
+]
+}
+)
+{
+  _id: ObjectId('68188d4c694891bcf7a29e9f'),
+  customer_name: 'keerthana',
+  car_number: 'KA-09 PR-2000',
+  car_brand: 'TATA PUNCH',
+  incoming_time: '2025-05-05T14:33:00',
+  age: '21'
+}
+{
+  _id: ObjectId('68188d4c694891bcf7a29ea0'),
+  customer_name: 'kirik keerthi',
+  car_number: 'KA-09 RA-2005',
+  car_brand: 'TOYOTA Etios',
+  incoming_time: '2025-05-05T10:00:00',
+  age: '25'
+}
+
+db.car_parking.find(
+{
+age: {$in:[ "20","21","24"]}
+}
+)
+{
+  _id: ObjectId('68188d4c694891bcf7a29e9f'),
+  customer_name: 'keerthana',
+  car_number: 'KA-09 PR-2000',
+  car_brand: 'TATA PUNCH',
+  incoming_time: '2025-05-05T14:33:00',
+  age: '21'
+}
+mongo_basics
+Selection deleted
+
