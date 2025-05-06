@@ -1,3 +1,4 @@
+
 use mongo_basics
 switched to db mongo_basics
 db.createcollection("car_parking");
@@ -666,3 +667,111 @@ age: {$in:[ "20","21","24"]}
 mongo_basics
 Selection deleted
 
+
+
+
+
+
+user@4GW23CS078 MINGW64 ~/OneDrive/Desktop/GSSS_SpringBoot_mongoDB
+$ ls
+gsss_mtd_spring_mongo_4GW23CS078/
+$ ^C
+bash: :s^C: substitution failed
+
+user@4GW23CS078 MINGW64 ~/OneDrive/Desktop/GSSS_SpringBoot_mongoDB
+$ cd "^C
+
+user@4GW23CS078 MINGW64 ~/OneDrive/Desktop/GSSS_SpringBoot_mongoDB
+$ cd "gsss_mtd_spring_mongo_4GW23CS078"
+
+user@4GW23CS078 MINGW64 ~/OneDrive/Desktop/GSSS_SpringBoot_mongoDB/gsss_mtd_spring_mongo_4GW23CS078 (main)
+$ ls
+README.md
+
+user@4GW23CS078 MINGW64 ~/OneDrive/Desktop/GSSS_SpringBoot_mongoDB/gsss_mtd_spring_mongo_4GW23CS078 (main)
+$ ls
+'1st day MongoDB carparking.txt'   README.md
+
+user@4GW23CS078 MINGW64 ~/OneDrive/Desktop/GSSS_SpringBoot_mongoDB/gsss_mtd_spring_mongo_4GW23CS078 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        1st day MongoDB carparking.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+user@4GW23CS078 MINGW64 ~/OneDrive/Desktop/GSSS_SpringBoot_mongoDB/gsss_mtd_spring_mongo_4GW23CS078 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        1st day MongoDB carparking.txt
+        pexels-nicolas-poupart-1241079-2360569.jpg
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+user@4GW23CS078 MINGW64 ~/OneDrive/Desktop/GSSS_SpringBoot_mongoDB/gsss_mtd_spring_mongo_4GW23CS078 (main)
+$ ^C
+
+user@4GW23CS078 MINGW64 ~/OneDrive/Desktop/GSSS_SpringBoot_mongoDB/gsss_mtd_spring_mongo_4GW23CS078 (main)
+$ git add "1st day MongoDB carparking.txt"
+
+user@4GW23CS078 MINGW64 ~/OneDrive/Desktop/GSSS_SpringBoot_mongoDB/gsss_mtd_spring_mongo_4GW23CS078 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   1st day MongoDB carparking.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        pexels-nicolas-poupart-1241079-2360569.jpg
+
+
+user@4GW23CS078 MINGW64 ~/OneDrive/Desktop/GSSS_SpringBoot_mongoDB/gsss_mtd_spring_mongo_4GW23CS078 (main)
+$ git add .
+
+user@4GW23CS078 MINGW64 ~/OneDrive/Desktop/GSSS_SpringBoot_mongoDB/gsss_mtd_spring_mongo_4GW23CS078 (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   1st day MongoDB carparking.txt
+        new file:   pexels-nicolas-poupart-1241079-2360569.jpg
+
+
+user@4GW23CS078 MINGW64 ~/OneDrive/Desktop/GSSS_SpringBoot_mongoDB/gsss_mtd_spring_mongo_4GW23CS078 (main)
+$ git commit -m "mongoDB notes for your reference"
+[main de880fe] mongoDB notes for your reference
+ 2 files changed, 668 insertions(+)
+ create mode 100644 1st day MongoDB carparking.txt
+ create mode 100644 pexels-nicolas-poupart-1241079-2360569.jpg
+
+user@4GW23CS078 MINGW64 ~/OneDrive/Desktop/GSSS_SpringBoot_mongoDB/gsss_mtd_spring_mongo_4GW23CS078 (main)
+$ git push origin main
+info: please complete authentication in your browser...
+fatal: Access is denied
+remote: Support for password authentication was removed on August 13, 2021.
+remote: Please see https://docs.github.com/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authenticati
+on.
+fatal: Authentication failed for 'https://github.com/Prakruthi-HR/gsss_mtd_spring_mongo_4GW23CS078.git/'
+
+user@4GW23CS078 MINGW64 ~/OneDrive/Desktop/GSSS_SpringBoot_mongoDB/gsss_mtd_spring_mongo_4GW23CS078 (main)
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 2.16 MiB | 204.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/Prakruthi-HR/gsss_mtd_spring_mongo_4GW23CS078.git
+   2a2254a..de880fe  main -> main
